@@ -21,6 +21,7 @@ public class PersonRepositoryStub implements PersonRepository {
 		jan.setFriends(new ArrayList<Person>());
 		an.setFriends(new ArrayList<Person>());
 		jan.addFriend(an);
+		jan.addFriend(jan);
 		an.addFriend(jan);
 	}
 	

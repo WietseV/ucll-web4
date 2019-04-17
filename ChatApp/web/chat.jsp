@@ -16,14 +16,10 @@
     <p>Welcome ${user.getFirstName()}!</p>
     <div id="status"></div>
 
-    <div id="friends">
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Status</th>
-            </tr>
-        </table>
-    </div>
+    <table id="friends">
+
+
+    </table>
 
     <div>
         <label>Change status</label>
@@ -42,7 +38,7 @@
         <label>Add friend</label>
         <input name="friendtext" id="friendtext"/></label>
 
-        <input type="button" id="friendbutton" value="Add" onclick="AddFriend();"/>
+        <input type="button" id="friendbutton" value="Add" onclick="addFriend();"/>
         <script type="text/javascript" src="js/friends.js"></script>
     </div>
 </main>

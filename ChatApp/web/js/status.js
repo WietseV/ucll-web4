@@ -23,7 +23,7 @@ function getCurrentStatus () {
 function getData () {
     if (xHRObject.status == 200) {
         if (xHRObject.readyState == 4) {
-            alert(xHRObject.responseText);
+            //alert(xHRObject.responseText);
             var serverResponse = JSON.parse(xHRObject.responseText);
             var status = serverResponse.status; // of je kan ook doen: serverResponse["status"]
             //var status = xHRObject.responseText;

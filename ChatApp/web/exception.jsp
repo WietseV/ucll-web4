@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/sample.css">
 </head>
 <body>
-	<header role="banner"> <img alt="Toscane" src="images/books.jpg"> </header>
+	<header role="banner"> <img alt="Toscane" src="images/chat.jpg"> </header>
 	<main> 
 	<article>
 	<h1>Oeps!</h1>

@@ -12,14 +12,15 @@ public class PersonRepositoryStub implements PersonRepository {
 	private Map<String, Person> persons = new HashMap<String, Person>();
 	
 	public PersonRepositoryStub () {
-		Person administrator = new Person("bib@ucll.be", "t", "Bib", "Liothekaris", Role.BIB, "online");
+		Person administrator = new Person("bib@ucll.be", "t", "Bib", "Liothekaris", Role.BIB, "Online");
 		add(administrator);
-		Person jan = new Person("jan@ucll.be", "t", "Jan", "Janssens", Role.LID, "online");
+		Person jan = new Person("jan@ucll.be", "t", "Jan", "Janssens", Role.LID, "Online");
 		add(jan);
-		Person an = new Person("an@ucll.be", "t", "An", "Cornelissen", Role.LID, "online");
+		Person an = new Person("an@ucll.be", "t", "An", "Cornelissen", Role.LID, "Online");
 		add(an);
 		jan.setFriends(new ArrayList<Person>());
 		an.setFriends(new ArrayList<Person>());
+		administrator.setFriends(new ArrayList<Person>());
 		jan.addFriend(an);
 		jan.addFriend(jan);
 		an.addFriend(jan);
@@ -31,7 +32,7 @@ public class PersonRepositoryStub implements PersonRepository {
 		}
 		return persons.get(personId);
 	}
-	
+
 	public List<Person> getAll(){
 		return new ArrayList<Person>(persons.values());	
 	}

@@ -16,14 +16,14 @@
     <p>Welcome ${user.getFirstName()}!</p>
     <div id="status"></div>
 
-    <table id="friends">
+    <div id="friends">
 
 
-    </table>
+    </div>
 
     <div>
         <label>Change status</label>
-        <input list="statuslist" name="statustext" id="statustext"/></label>
+        <input list="statuslist" name="statustext" id="statustext"/>
         <datalist id="statuslist">
             <option value="Online">
             <option value="Offline">
@@ -34,13 +34,45 @@
         <script type="text/javascript" src="js/status.js"></script>
     </div>
 
-    <div>
+
+    <button type="button" id="toggleButton">Add Friend</button>
+    <div id="add">
         <label>Add friend</label>
-        <input name="friendtext" id="friendtext"/></label>
+        <input name="friendtext" id="friendtext"/>
 
         <input type="button" id="friendbutton" value="Add" onclick="addFriend();"/>
+        <input type="button" id="cancelFriend" value="Cancel" />
+        <script type="text/javascript" src="js/chat.js"></script>
         <script type="text/javascript" src="js/friends.js"></script>
     </div>
+
+    <div id="chat">
+
+            <h3 id="id"></h3>
+
+            <ul id="chatText"></ul>
+
+            <label for="msg"><b>Message</b></label>
+            <input placeholder="Type message.." name="msg" id="msg"></input>
+
+            <button type="submit" id="sendMsg" onclick="sendMessage()">Send</button>
+            <button type="button" id="closeChat" onclick="closeChat()">Close</button>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#chat").hide();
+            $("#add").hide();
+            $("#toggleButton").show();
+            $("#toggleButton").click(function () {
+                $("#add").show();
+                $("#toggleButton").hide();
+            });
+            $("#cancelFriend").click(function () {
+                $("#add").hide();
+                $("#toggleButton").show();
+            });
+        });
+    </script>
 </main>
 
 <jsp:include page="footer.jsp">

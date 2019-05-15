@@ -55,7 +55,11 @@ public class Person {
 
 	public void setFriends(List<Person> friends) { this.friends = friends;}
 
-	public void addFriend(Person person) { this.friends.add(person);}
+	public void addFriend(Person person) {
+		if (!friends.contains(person)){
+			this.friends.add(person);
+		}
+	}
 
 	public String getStatus() { return this.status;}
 

@@ -40,6 +40,7 @@ public class LogIn extends RequestHandler {
 		
 		if (errors.size() > 0) {
 			request.setAttribute("errors", errors);
+			destination = "index.jsp";
 		}
 		
 		return destination;	

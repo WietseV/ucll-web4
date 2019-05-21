@@ -7,6 +7,7 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,16 +26,24 @@ public class Person {
 	private Role role;
 	private String status;
 	@JsonIgnore
+	private String gender;
+	@JsonIgnore
+	private Integer age;
+	@JsonIgnore
 	private List<Person> friends;
 
 	public Person(String userId, String password, String firstName,
-			String lastName,Role role, String status) {
+			String lastName,Role role, String status, String gender, Integer age) {
 		setUserId(userId);
 		setHashedPassword(password);
 		setFirstName(firstName);
 		setLastName(lastName);
 		setRole(role);
 		setStatus(status);
+		setGender(gender);
+		setAge(age);
+		this.friends = new ArrayList<>();
+
 	}
 
 	public Person(String userId, String password, String salt,
@@ -46,6 +55,7 @@ public class Person {
 		setLastName(lastName);
 		setRole(role);
 		setStatus(status);
+		this.friends = new ArrayList<>();
 	}
 
 	public Person() {
@@ -53,7 +63,9 @@ public class Person {
 
 	public List<Person> getFriends() { return this.friends;}
 
-	public void setFriends(List<Person> friends) { this.friends = friends;}
+	public void setFriends(List<Person> friends) {
+		this.friends = friends;
+	}
 
 	public void addFriend(Person person) {
 		if (!friends.contains(person)){
@@ -178,4 +190,25 @@ public class Person {
 		this.lastName = lastName;
 	}
 
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		if (gender.isEmpty()) {
+			throw new IllegalArgumentException("No gender given");
+		}
+		this.gender = gender;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		if (age.toString().isEmpty()) {
+			throw new IllegalArgumentException("No age given");
+		}
+		this.age = age;
+	}
 }

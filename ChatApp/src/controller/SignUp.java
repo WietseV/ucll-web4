@@ -61,7 +61,7 @@ public class SignUp extends RequestHandler {
 
         if (errors.size() == 0) {
             PersonService personService = super.getPersonService();
-            Person person = new Person(email, password, firstname, name,Role.LID, "Online", gender, age);
+            Person person = new Person(email, password, firstname, name,Role.LID, "Offline", gender, age);
             personService.addPerson(person);
         }
 

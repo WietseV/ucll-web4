@@ -37,6 +37,11 @@ public class PersonService {
 		return getPersonRepository().getAuthenticatedUser(email, password);
 	}
 
+	public void updateFirstName(String firstname, Person person){
+		person.setFirstName(firstname);
+		getPersonRepository().update(person);
+	}
+
 	private PersonRepository getPersonRepository() {
 		return personRepository;
 	}

@@ -10,6 +10,16 @@ public class PersonService {
 	private PersonRepository personRepository = new PersonRepositoryStub();
 	public List<ChatConv> Chatconvs = new ArrayList<>();
 
+	public List<PraktijkExamen> praktijkExamens = new ArrayList<>();
+
+	public List<PraktijkExamen> getPraktijkExamens() {
+		return praktijkExamens;
+	}
+
+	public void addPraktijkExamen(PraktijkExamen pE) {
+		praktijkExamens.add(pE);
+	}
+
 	public PersonService(){
 	}
 	

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import domain.PersonService;
+import domain.PraktijkExamenService;
 
 @WebServlet("/Controller")
 public class Controller extends HttpServlet {
